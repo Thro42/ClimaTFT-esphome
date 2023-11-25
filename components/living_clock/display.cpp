@@ -1,4 +1,3 @@
-#include <SPI.h>
 #include <time.h>                   // time() ctime(
 #include <AsyncDelay.h>
 #include "display.h"
