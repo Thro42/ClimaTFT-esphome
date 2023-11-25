@@ -1,2 +1,2 @@
 # ClimaTFT-esphome
-Clima Controler for ESP-Home on WT32-SC01
+7" Clock for ESP-Home
