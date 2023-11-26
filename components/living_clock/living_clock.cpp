@@ -1,11 +1,11 @@
 #include "esphome/core/log.h"
 #include "esphome/core/time.h"
-#include living_clock_hub.h
+#include living_clock.h
 #include "display.h"
 
 namespace esphome
 {
-    namespace  living_clock_hub
+    namespace  living_clock
     {
 
         static const char *TAG = "living_clock_hub.component";
