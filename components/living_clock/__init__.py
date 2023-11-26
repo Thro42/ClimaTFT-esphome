@@ -10,8 +10,7 @@ Clock = tplink_ns.struct('Clock')
 DEPENDENCIES = ['json']
 AUTO_LOAD = ['json']
 
-CONF_PLUGS = 'clocks'
-CONF_TOTAL = 'total'
+CONF_CLOCKS = 'clocks'
 CONF_OUT_TEMP = 'out_temp'
 CONF_IN_TEMP = 'in_temp'
 CONF_IN_HUM = 'in_huminity'
@@ -24,14 +23,14 @@ CLOCK_SCHEMA = cv.Schema({
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(LivingClockHub),
-    cv.Optional(CONF_PLUGS): cv.ensure_list(CLOCK_SCHEMA),
+    cv.Optional(CONF_CLOCKS): cv.ensure_list(CLOCK_SCHEMA),
 })
 
 def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     yield cg.register_component(var, config)
 
-    for conf in config.get(CONF_PLUGS, []):
+    for conf in config.get(CONF_CLOCKS, []):
         out_temp = 0
         if CONF_OUT_TEMP in conf:
             out_temp = yield cg.get_variable(conf[CONF_OUT_TEMP])
