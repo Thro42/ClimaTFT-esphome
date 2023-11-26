@@ -17,6 +17,13 @@ namespace esphome
 
         }
         void LivingClockHub::loop() {
+             if (this->clock_.size() == 1) {
+                auto &clock = this->clock_[0];
+                if (clock.in_temp && clock.in_temp->has_state()) {
+                    float temp = clock.in_temp->state;
+                    outInTempFloat( temp );
+                }                
+             }
             void loopDisplay();
         }
 

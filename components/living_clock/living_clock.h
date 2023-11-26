@@ -11,7 +11,7 @@ namespace esphome
         struct Clock {
             esphome::output::FloatOutput *out_temp;
             esphome::output::FloatOutput *in_temp;
-            esphome::output::FloatOutput *in_hum;
+            esphome::output::FloatOutput *in_huminity;
         }
         class LivingClockHub : public Component {
             public:
@@ -19,7 +19,7 @@ namespace esphome
                 void dump_config() override;
                 void loop() override;
                 //
-                void add_plug(const Clock &clock) { clock_.push_back(clock); }
+                void add_clock(const Clock &clock) { clock_.push_back(clock); }
                 //
                 set_out_temp(float new_temp);
                 set_in_temp(float new_temp);

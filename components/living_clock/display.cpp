@@ -136,6 +136,12 @@ void outInTemp( String newTemp) {
   sprintf(buffer, "%02.1f", temp);
   Serial.println(buffer);
   lv_label_set_text(ui_lblInTemp, buffer);
+}
+
+void outInTempFloat( float newTemp) {
+  sprintf(buffer, "%02.1f", newTemp);
+  Serial.println(buffer);
+  lv_label_set_text(ui_lblInTemp, buffer);
 
 }
 
