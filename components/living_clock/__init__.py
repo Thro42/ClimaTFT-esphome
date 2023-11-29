@@ -18,12 +18,12 @@ CONF_IN_HUM = 'in_huminity'
 CLOCK_SCHEMA = cv.Schema({
     cv.Required(CONF_OUT_TEMP): cv.use_id(output.FloatOutput),
     cv.Required(CONF_IN_TEMP): cv.use_id(output.FloatOutput),
-    cv.Required(CONF_IN_HUM): cv.use_id(output.FloatOutput),
+    cv.Required(CONF_IN_HUM): cv.use_id(output.FloatOutput)
 })
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(LivingClockHub),
-    cv.Optional(CONF_CLOCKS): cv.ensure_list(CLOCK_SCHEMA),
+    cv.Optional(CONF_CLOCKS): cv.ensure_list(CLOCK_SCHEMA)
 })
 
 def to_code(config):
